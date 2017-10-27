@@ -1,0 +1,16 @@
+{
+	"name": "planets-api",
+	"version": "1.0.0",
+	"description": "sample API for testing Okta API access management",
+	"main": "app.js",
+	"scripts": {
+		"start": "node app.js"
+	},
+	"author": "tom.smith@okta.com",
+	"dependencies": {
+		"express": "^4.16.1"
+	},
+	"engines": {
+		"node": "6.11.3"
+	}
+}
