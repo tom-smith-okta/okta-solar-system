@@ -12,7 +12,7 @@ module.exports = function (app) {
 		var asteroids = ["ceres", "hygiea", "pallas", "vesta"]
 
 		res.json(moons)
-	}
+	})
 
 	app.get('/planets', function(req, res, next) {
 
