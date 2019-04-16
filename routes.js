@@ -11,7 +11,7 @@ module.exports = function (app) {
 
 		var asteroids = ["ceres", "hygiea", "pallas", "vesta"]
 
-		res.json(moons)
+		res.json(asteroids)
 	})
 
 	app.get('/planets', function(req, res, next) {
