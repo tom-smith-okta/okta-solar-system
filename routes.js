@@ -40,21 +40,12 @@ module.exports = function (app) {
 	})
 }
 
-function get_random_val() {
-
-	var valid_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-
-	var r = Math.floor(Math.random() * valid_chars.length)
-
-	return r
-}
-
 function get_substr(l) {
 
 	var s = ""
 
 	for(i = 0; i < l; i++) {
-		s = s + get_random_val()
+		s = s + Math.floor(Math.random() * 10)
 	}
 
 	return s
