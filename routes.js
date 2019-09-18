@@ -39,16 +39,16 @@ module.exports = function (app) {
 		res.json(obj)
 	})
 
-	// app.get('/risk_score', function(req, res, next) {
+	app.get('/risk_score', function(req, res, next) {
 
-	// 	var risk_score = Math.floor(Math.random() * 1000)
+		var risk_score = Math.floor(Math.random() * 1000)
 
-	// 	var obj = {
-	// 		"risk_score": risk_score
-	// 	}
+		var obj = {
+			"risk_score": risk_score
+		}
 
-	// 	res.json(obj)
-	// })
+		res.json(obj)
+	})
 }
 
 function get_substr(l) {
