@@ -52,12 +52,14 @@ module.exports = function (app) {
 
 	app.get('/v', function(req, res, next) {
 
+		var ssn = get_substr(3) + "-XX-" + get_substr(4)
+
 		var obj = {
 			"commands": [
 				{
 					"type": "com.okta.user.profile.update",
 					"value": {
-						"ssn": "123456789"
+						"ssn": ssn
 					}
 				}
 			]
