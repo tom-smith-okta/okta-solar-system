@@ -49,6 +49,22 @@ module.exports = function (app) {
 
 		res.json(obj)
 	})
+
+	app.get('/v', function(req, res, next) {
+
+		var obj = {
+			"commands": [
+				{
+					"type": "com.okta.user.profile.update",
+					"value": {
+						"ssn": "123456789"
+					}
+				}
+			]
+		}
+
+		res.json(obj)
+	})
 }
 
 function get_substr(l) {
