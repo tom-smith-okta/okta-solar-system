@@ -31,6 +31,7 @@ module.exports = function (app) {
 	app.get('/grades/:student_id', function(req, res, next) {
 
 		var grades = {
+			"12345": "F",
 			"00uptdgk3iNZYSAc10h7": "A"
 		}
 
