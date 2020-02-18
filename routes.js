@@ -28,6 +28,24 @@ module.exports = function (app) {
 		res.json(moons)
 	})
 
+	app.get('/grades/:student_id', function(req, res, next) {
+
+		var grades = {
+			"00uptdgk3iNZYSAc10h7": "A"
+		}
+
+		var student_id = req.params.student_id
+
+		var grade = grades[student_id]
+
+		var obj = {
+			"student_id": student_id,
+			"grade": grade
+		}
+
+		res.json(obj)
+	})
+
 	app.get('/ssn', function(req, res, next) {
 
 		var ssn = get_substr(3) + "-XX-" + get_substr(4)
