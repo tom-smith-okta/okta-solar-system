@@ -110,13 +110,30 @@ module.exports = function (app) {
 					"type": "com.okta.assertion.patch",
 					"value": {
 						"op": "add",
-						"path": "/claims/nickName",
+						"path": "/claims/test",
 						"value": ssn
 					}
 				}
 			]
 		}
 
+        // {
+        //   "op": "add",
+        //   "path": "/claims/foo",
+        //   "value": {
+        //     "attributes": {
+        //       "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+        //     },
+        //     "attributeValues": [
+        //       {
+        //         "attributes": {
+        //           "xsi:type": "xs:string"
+        //         },
+        //         "value": "barer"
+        //       }
+        //     ]
+        //   }
+        // }
 
 
 		// var obj = {
