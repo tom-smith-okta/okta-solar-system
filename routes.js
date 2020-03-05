@@ -104,18 +104,18 @@ module.exports = function (app) {
 		// 	]
 		// }
 
-		var obj = {
-			"commands": [
-				{
-					"type": "com.okta.assertion.patch",
-					"value": {
-						"op": "add",
-						"path": "/claims/nickName",
-						"value": ssn
-					}
-				}
-			]
-		}
+		// var obj = {
+		// 	"commands": [
+		// 		{
+		// 			"type": "com.okta.assertion.patch",
+		// 			"value": {
+		// 				"op": "add",
+		// 				"path": "/claims/nickName",
+		// 				"value": ssn
+		// 			}
+		// 		}
+		// 	]
+		// }
 
 
 
@@ -137,7 +137,58 @@ module.exports = function (app) {
 		// 	}
 		// }
 
+
+var obj = {
+   "commands": [
+    {
+      "type": "com.okta.assertion.patch",
+      "value": [
+        {
+          "op": "replace",
+          "path": "/claims/array/attributeValues/1/value",
+          "value": "replacementValue"
+        },
+        {
+          "op": "replace",
+          "path": "/authentication/authnContext",
+          "value": {
+            "authnContextClassRef": "Something:different?"
+          }
+        },
+        {
+          "op": "add",
+          "path": "/claims/foo",
+          "value": {
+            "attributes": {
+              "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+            },
+            "attributeValues": [
+              {
+                "attributes": {
+                  "xsi:type": "xs:string"
+                },
+                "value": "barer"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "com.okta.assertion.patch",
+      "value": [
+        {
+          "op": "replace",
+          "path": "/authentication/sessionIndex",
+          "value": "definitelyARealSession"
+        }
+      ]
+    }
+  ]
+}
+
 		res.json(obj)
+
 	})
 }
 
