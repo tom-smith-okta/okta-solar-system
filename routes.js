@@ -144,18 +144,6 @@ var obj = {
       "type": "com.okta.assertion.patch",
       "value": [
         {
-          "op": "replace",
-          "path": "/claims/array/attributeValues/1/value",
-          "value": "replacementValue"
-        },
-        {
-          "op": "replace",
-          "path": "/authentication/authnContext",
-          "value": {
-            "authnContextClassRef": "Something:different?"
-          }
-        },
-        {
           "op": "add",
           "path": "/claims/foo",
           "value": {
@@ -171,16 +159,6 @@ var obj = {
               }
             ]
           }
-        }
-      ]
-    },
-    {
-      "type": "com.okta.assertion.patch",
-      "value": [
-        {
-          "op": "replace",
-          "path": "/authentication/sessionIndex",
-          "value": "definitelyARealSession"
         }
       ]
     }
