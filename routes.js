@@ -89,7 +89,7 @@ module.exports = function (app) {
 
 	app.get('/ssn-saml', function(req, res, next) {
 
-		res.json({"somekey": "someval"})
+		// res.json({"somekey": "someval"})
 
 		var ssn = get_substr(3) + "-XX-" + get_substr(4)
 
@@ -122,7 +122,7 @@ module.exports = function (app) {
 			}
 		}
 
-		// res.json(obj)
+		res.json(obj)
 	})
 }
 
