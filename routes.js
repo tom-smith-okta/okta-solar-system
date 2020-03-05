@@ -104,19 +104,30 @@ module.exports = function (app) {
 		// 	]
 		// }
 
-		var obj = {
-			"commands": [
-				{
-					"type": "com.okta.assertion.patch",
-					"value": {
-						"op": "add",
-						"path": "/claims/test",
-						"value": ssn
-					}
-				}
-			]
-		}
+		// var obj = {
+		// 	"commands": [
+		// 		{
+		// 			"type": "com.okta.assertion.patch",
+		// 			"value": {
+		// 				"op": "add",
+		// 				"path": "/claims/test",
+		// 				"value": ssn
+		// 			}
+		// 		}
+		// 	]
+		// }
 
+var obj =
+    {
+      "type": "com.okta.assertion.patch",
+      "value": [
+        {
+          "op": "replace",
+          "path": "/authentication/sessionIndex",
+          "value": "definitelyARealSession"
+        }
+      ]
+    }
         // {
         //   "op": "add",
         //   "path": "/claims/foo",
