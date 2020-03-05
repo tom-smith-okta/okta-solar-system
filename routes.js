@@ -105,22 +105,37 @@ module.exports = function (app) {
 		// }
 
 		var obj = {
-			"op": "add",
-			"path": "/claims/nickName",
-			"value": {
-				"attributes": {
-					"NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
-				},
-				"attributeValues": [
-					{
-						"attributes": {
-							"xsi:type": "xs:string"
-						},
+			"commands": [
+				{
+					"type": "com.okta.assertion.patch",
+					"value": {
+						"op": "add",
+						"path": "/claims/nickName",
 						"value": ssn
 					}
-				]
-			}
+				}
+			]
 		}
+
+
+
+		// var obj = {
+		// 	"op": "add",
+		// 	"path": "/claims/nickName",
+		// 	"value": {
+		// 		"attributes": {
+		// 			"NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+		// 		},
+		// 		"attributeValues": [
+		// 			{
+		// 				"attributes": {
+		// 					"xsi:type": "xs:string"
+		// 				},
+		// 				"value": ssn
+		// 			}
+		// 		]
+		// 	}
+		// }
 
 		res.json(obj)
 	})
