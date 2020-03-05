@@ -118,6 +118,7 @@ module.exports = function (app) {
 		// }
 
 var obj =
+	"commands": [
     {
       "type": "com.okta.assertion.patch",
       "value": [
@@ -128,6 +129,7 @@ var obj =
         }
       ]
     }
+    ]
         // {
         //   "op": "add",
         //   "path": "/claims/foo",
