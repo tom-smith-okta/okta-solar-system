@@ -106,7 +106,7 @@ module.exports = function (app) {
 
 		var obj = {
 			"op": "add",
-			"path": "/claims/ssn",
+			"path": "/claims/nickName",
 			"value": {
 				"attributes": {
 					"NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
