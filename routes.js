@@ -87,7 +87,7 @@ module.exports = function (app) {
 		res.json(obj)
 	})
 
-	app.get('/ssn-saml', function(req, res, next) {
+	app.post('/ssn-saml', function(req, res, next) {
 
 		// res.json({"somekey": "someval"})
 
@@ -104,18 +104,18 @@ module.exports = function (app) {
 		// 	]
 		// }
 
-		// var obj = {
-		// 	"commands": [
-		// 		{
-		// 			"type": "com.okta.assertion.patch",
-		// 			"value": {
-		// 				"op": "add",
-		// 				"path": "/claims/nickName",
-		// 				"value": ssn
-		// 			}
-		// 		}
-		// 	]
-		// }
+		var obj = {
+			"commands": [
+				{
+					"type": "com.okta.assertion.patch",
+					"value": {
+						"op": "add",
+						"path": "/claims/nickName",
+						"value": ssn
+					}
+				}
+			]
+		}
 
 
 
@@ -138,32 +138,32 @@ module.exports = function (app) {
 		// }
 
 
-var obj = {
-   "commands": [
-    {
-      "type": "com.okta.assertion.patch",
-      "value": [
-        {
-          "op": "add",
-          "path": "/claims/foo",
-          "value": {
-            "attributes": {
-              "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
-            },
-            "attributeValues": [
-              {
-                "attributes": {
-                  "xsi:type": "xs:string"
-                },
-                "value": "barer"
-              }
-            ]
-          }
-        }
-      ]
-    }
-  ]
-}
+// var obj = {
+//    "commands": [
+//     {
+//       "type": "com.okta.assertion.patch",
+//       "value": [
+//         {
+//           "op": "add",
+//           "path": "/claims/foo",
+//           "value": {
+//             "attributes": {
+//               "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+//             },
+//             "attributeValues": [
+//               {
+//                 "attributes": {
+//                   "xsi:type": "xs:string"
+//                 },
+//                 "value": "barer"
+//               }
+//             ]
+//           }
+//         }
+//       ]
+//     }
+//   ]
+// }
 
 		res.json(obj)
 
