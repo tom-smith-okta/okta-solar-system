@@ -86,6 +86,44 @@ module.exports = function (app) {
 
 		res.json(obj)
 	})
+
+	app.get('/ssn-saml', function(req, res, next) {
+
+		res.json({"somekey": "someval"})
+
+		var ssn = get_substr(3) + "-XX-" + get_substr(4)
+
+		// var obj = {
+		// 	"commands": [
+		// 		{
+		// 			"type": "com.okta.assertion.patch",
+		// 			"value": {
+		// 				"ssn": ssn
+		// 			}
+		// 		}
+		// 	]
+		// }
+
+		var obj = {
+			"op": "add",
+			"path": "/claims/ssn",
+			"value": {
+				"attributes": {
+					"NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
+				},
+				"attributeValues": [
+					{
+						"attributes": {
+							"xsi:type": "xs:string"
+						},
+						"value": ssn
+					}
+				]
+			}
+		}
+
+		// res.json(obj)
+	})
 }
 
 function get_substr(l) {
