@@ -119,6 +119,31 @@ module.exports = function (app) {
 
 var obj = {
 	"commands": [
+	    {
+	      "type": "com.okta.assertion.patch",
+	      "value": [
+	        {
+	          "op": "replace",
+	          "path": "/authentication/sessionIndex",
+	          "value": "definitelyARealSession"
+	        }
+	      ]
+	    },
+	    {
+	      "type": "com.okta.assertion.patch",
+	      "value": [
+	        {
+	          "op": "replace",
+	          "path": "/claims/firstName",
+	          "value": "tom"
+	        }
+	      ]
+	    }
+    ]
+}
+
+var obj = {
+	"commands": [
     {
       "type": "com.okta.assertion.patch",
       "value": [
