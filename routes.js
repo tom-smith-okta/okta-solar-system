@@ -87,6 +87,37 @@ module.exports = function (app) {
 		res.json(obj)
 	})
 
+	app.post('/test_inline_hook', function(req, res, next) {
+
+		var obj = {
+		  "commands": [
+		    {
+		      "type": "com.okta.identity.patch",
+		      "value": [
+		        {
+		          "op": "add",
+		          "path": "/claims/extPatientId",
+		          "value": "1234"
+		        }
+		      ]
+		    },
+		    {
+		      "type": "com.okta.access.patch",
+		      "value": [
+		        {
+		          "op": "add",
+		          "path": "/claims/external_guid",
+		          "value": "F0384685-F87D-474B-848D-2058AC5655A7"
+		        }
+		      ]
+		    }
+		  ]
+		}
+
+		res.json(obj)
+
+	})
+
 	app.post('/ssn-saml', function(req, res, next) {
 
 		// res.json({"somekey": "someval"})
@@ -117,31 +148,32 @@ module.exports = function (app) {
 		// 	]
 		// }
 
-var obj = {
-	"commands": [
-	    {
-	      "type": "com.okta.assertion.patch",
-	      "value": [
-	        {
-	          "op": "replace",
-	          "path": "/authentication/sessionIndex",
-	          "value": "definitelyARealSession"
-	        }
-	      ]
-	    },
-	    {
-	      "type": "com.okta.assertion.patch",
-	      "value": [
-	        {
-	          "op": "replace",
-	          "path": "/claims/firstName",
-	          "value": "tom"
-	        }
-	      ]
-	    }
-    ]
-}
+// var obj = {
+// 	"commands": [
+// 	    {
+// 	      "type": "com.okta.assertion.patch",
+// 	      "value": [
+// 	        {
+// 	          "op": "replace",
+// 	          "path": "/authentication/sessionIndex",
+// 	          "value": "definitelyARealSession"
+// 	        }
+// 	      ]
+// 	    },
+// 	    {
+// 	      "type": "com.okta.assertion.patch",
+// 	      "value": [
+// 	        {
+// 	          "op": "replace",
+// 	          "path": "/claims/firstName",
+// 	          "value": "tom"
+// 	        }
+// 	      ]
+// 	    }
+//     ]
+// }
 
+// WORKS
 var obj = {
 	"commands": [
     {
