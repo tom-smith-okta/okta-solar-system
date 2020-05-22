@@ -23,7 +23,7 @@ module.exports = function (app) {
 
 	app.get('/moons', function(req, res, next) {
 
-		var moons = ["adrastea", "amalthea", "callisto", "europa", "ganymede", "io", "metis", "thebe", "titan"]
+		var moons = ["adrastea", "amalthea", "callisto", "europa", "ganymede", "io", "metis", "thebe"]
 
 		res.json(moons)
 	})
