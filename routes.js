@@ -7,6 +7,17 @@ module.exports = function (app) {
 
 	})
 
+	/********************************************************/
+	// Solar system endpoints
+	/********************************************************/
+
+
+	// to demo open access (no authz required)
+	app.get('/visitors', function(req, res, next) {
+		res.json(["Oumuamua", "2I/Borisov"])
+	})
+
+	// to demo jwt validation (valid jwt required, but no evaluation of scopes)
 	app.get('/asteroids', function(req, res, next) {
 
 		var asteroids = ["ceres", "hygiea", "pallas", "vesta"]
@@ -14,6 +25,7 @@ module.exports = function (app) {
 		res.json(asteroids)
 	})
 
+	// to demo scope ("silver" scope required)
 	app.get('/planets', function(req, res, next) {
 
 		var planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
@@ -21,12 +33,17 @@ module.exports = function (app) {
 		res.json(planets)
 	})
 
+	// to demo a different scope ("gold" scope required)
 	app.get('/moons', function(req, res, next) {
 
 		var moons = ["adrastea", "amalthea", "callisto", "europa", "ganymede", "io", "metis", "thebe"]
 
 		res.json(moons)
 	})
+
+	/********************************************************/
+	// other misc endpoints
+	/********************************************************/
 
 	app.get('/grades/:student_id', function(req, res, next) {
 
