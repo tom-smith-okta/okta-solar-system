@@ -137,8 +137,8 @@ module.exports = function (app) {
 
 	app.post('/valid_accounts', function(req, res, next) {
 
-		var email = request.body.email
-		var account_no = request.body.account_no
+		var email = req.body.email
+		var account_no = req.body.account_no
 
 		console.dir(req.body)
 
