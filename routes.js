@@ -135,7 +135,7 @@ module.exports = function (app) {
 
 	})
 
-	app.post('/comcast-accounts', function(req, res, next) {
+	app.post('/valid_accounts', function(req, res, next) {
 		res.sendStatus(200)
 	})
 
