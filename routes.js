@@ -140,7 +140,7 @@ module.exports = function (app) {
 		var email = request.body.email
 		var account_no = request.body.account_no
 
-		console.dir(request.body)
+		console.dir(req.body)
 
 		var response_obj = {}
 
