@@ -135,140 +135,31 @@ module.exports = function (app) {
 
 	})
 
+	app.post('/comcast-accounts', function(req, res, next) {
+		res.sendStatus(200)
+	})
+
 	app.post('/ssn-saml', function(req, res, next) {
 
 		// res.json({"somekey": "someval"})
 
 		var ssn = get_substr(3) + "-XX-" + get_substr(4)
 
-		// var obj = {
-		// 	"commands": [
-		// 		{
-		// 			"type": "com.okta.assertion.patch",
-		// 			"value": {
-		// 				"ssn": ssn
-		// 			}
-		// 		}
-		// 	]
-		// }
-
-		// var obj = {
-		// 	"commands": [
-		// 		{
-		// 			"type": "com.okta.assertion.patch",
-		// 			"value": {
-		// 				"op": "add",
-		// 				"path": "/claims/test",
-		// 				"value": ssn
-		// 			}
-		// 		}
-		// 	]
-		// }
-
-// var obj = {
-// 	"commands": [
-// 	    {
-// 	      "type": "com.okta.assertion.patch",
-// 	      "value": [
-// 	        {
-// 	          "op": "replace",
-// 	          "path": "/authentication/sessionIndex",
-// 	          "value": "definitelyARealSession"
-// 	        }
-// 	      ]
-// 	    },
-// 	    {
-// 	      "type": "com.okta.assertion.patch",
-// 	      "value": [
-// 	        {
-// 	          "op": "replace",
-// 	          "path": "/claims/firstName",
-// 	          "value": "tom"
-// 	        }
-// 	      ]
-// 	    }
-//     ]
-// }
-
-// WORKS
-var obj = {
-	"commands": [
-    {
-      "type": "com.okta.assertion.patch",
-      "value": [
-        {
-          "op": "replace",
-          "path": "/authentication/sessionIndex",
-          "value": "definitelyARealSession"
-        }
-      ]
-    }
-    ]
-}
-        // {
-        //   "op": "add",
-        //   "path": "/claims/foo",
-        //   "value": {
-        //     "attributes": {
-        //       "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
-        //     },
-        //     "attributeValues": [
-        //       {
-        //         "attributes": {
-        //           "xsi:type": "xs:string"
-        //         },
-        //         "value": "barer"
-        //       }
-        //     ]
-        //   }
-        // }
-
-
-		// var obj = {
-		// 	"op": "add",
-		// 	"path": "/claims/nickName",
-		// 	"value": {
-		// 		"attributes": {
-		// 			"NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
-		// 		},
-		// 		"attributeValues": [
-		// 			{
-		// 				"attributes": {
-		// 					"xsi:type": "xs:string"
-		// 				},
-		// 				"value": ssn
-		// 			}
-		// 		]
-		// 	}
-		// }
-
-
-// var obj = {
-//    "commands": [
-//     {
-//       "type": "com.okta.assertion.patch",
-//       "value": [
-//         {
-//           "op": "add",
-//           "path": "/claims/foo",
-//           "value": {
-//             "attributes": {
-//               "NameFormat": "urn:oasis:names:tc:SAML:2.0:attrname-format:basic"
-//             },
-//             "attributeValues": [
-//               {
-//                 "attributes": {
-//                   "xsi:type": "xs:string"
-//                 },
-//                 "value": "barer"
-//               }
-//             ]
-//           }
-//         }
-//       ]
-//     }
-//   ]
-// }
+		// WORKS
+		var obj = {
+			"commands": [
+		    {
+		      "type": "com.okta.assertion.patch",
+		      "value": [
+		        {
+		          "op": "replace",
+		          "path": "/authentication/sessionIndex",
+		          "value": "definitelyARealSession"
+		        }
+		      ]
+		    }
+		    ]
+		}
 
 		res.json(obj)
 
