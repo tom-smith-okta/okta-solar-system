@@ -136,12 +136,29 @@ module.exports = function (app) {
 	})
 
 	app.post('/valid_accounts', function(req, res, next) {
-		res.sendStatus(200)
+
+		var email = request.body.email
+		var account_no = request.body.account_no
+
+		console.dir(request.body)
+
+		var response_obj = {}
+
+		if (email == "clark.kent@mailinator.com" && account_no == "12345") {
+			console.log("this is a valid combo")
+
+			response_obj.result = "success"
+		}
+		else {
+			response_obj.result = "failure"
+		}
+
+		res.json(response_obj)
+
+		// res.sendStatus(200)
 	})
 
 	app.post('/ssn-saml', function(req, res, next) {
-
-		// res.json({"somekey": "someval"})
 
 		var ssn = get_substr(3) + "-XX-" + get_substr(4)
 
