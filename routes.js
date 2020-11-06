@@ -137,8 +137,6 @@ module.exports = function (app) {
 
 	app.post('/valid_accounts', function(req, res, next) {
 
-		// var body = JSON.parse(req.body)
-
 		var email = req.body.email
 		var account_no = req.body.account_no
 
@@ -146,7 +144,7 @@ module.exports = function (app) {
 
 		var response_obj = {}
 
-		if (email == "clark.kent@mailinator.com" && account_no == "12345") {
+		if (email == "lois.lane@mailinator.com" && account_no == "12345") {
 			console.log("this is a valid combo")
 
 			response_obj.result = "success"
@@ -156,8 +154,6 @@ module.exports = function (app) {
 		}
 
 		res.json(response_obj)
-
-		// res.sendStatus(200)
 	})
 
 	app.post('/ssn-saml', function(req, res, next) {
